@@ -38,22 +38,18 @@ cd emotion-detection
 
 2. Install required packages:
 ```bash
-pip install opencv-python tensorflow mediapipe numpy matplotlib scikit-learn
+pip install -r requirements.txt
 ```
-
-3. Download the dataset:
-   * Download the FER2013 dataset from Kaggle: [FER2013 Dataset](https://www.kaggle.com/datasets/msambare/fer2013)
-   * Extract the dataset and prepare it for training
 
 ## Project Structure
 ```
-emotion-detection/
-├── main.py                    # Main application file
-├── train_model.py            # Model training script
-├── test_model.py            # Model evaluation script
-├── model/
-│   └── emotion_recognition_model_final.h5
-└── README.md
+emotion_detection_project/
+├── main.py                     # Main script to run real-time emotion detection
+├── emotion_recognition_model_final.h5  # Pretrained model file
+├── requirements.txt            # Lists all dependencies
+├── README.md                   # Project description and usage instructions
+└── LICENSE.md                  # Licensing information
+
 ```
 
 ## Usage
@@ -64,23 +60,6 @@ emotion-detection/
 python main.py
 ```
 2. Press 'f' to exit the application
-
-### Training
-To train your own model:
-```bash
-python train_model.py
-```
-Note: Requires the FER2013 dataset to be properly set up.
-
-### Model Evaluation
-To evaluate the model's performance:
-```bash
-python test_model.py
-```
-This will generate:
-* Confusion matrix visualization
-* Detailed classification report
-* Performance metrics for each emotion
 
 ## Model Architecture
 The emotion detection model uses a CNN architecture:
@@ -115,15 +94,11 @@ cv2.addWeighted(overlay, 0.3, img, 0.7, 0)  # 0.3 = 30% opacity
    * Reduce camera resolution
    * Ensure no other applications are using the webcam
 
-4. **Training errors**:
-   * Verify FER2013 dataset is properly extracted and structured
-   * Ensure all emotion categories are present in the dataset
-
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
-* FER2013 dataset from Kaggle
+* FER2013 dataset from Kaggle used to train the model
 * MediaPipe for the face mesh implementation
 * TensorFlow for the deep learning framework
 * OpenCV for computer vision capabilities
